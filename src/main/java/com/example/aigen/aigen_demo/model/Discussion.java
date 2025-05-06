@@ -1,6 +1,10 @@
 package com.example.aigen.aigen_demo.model;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,36 +24,7 @@ public class Discussion {
     private String name;
     
     @OneToMany(mappedBy = "discussion", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Message> messages;
+    @JsonManagedReference // Indique à Jackson que cette partie sera sérialisée
+    private List<Message> messages = new ArrayList<>();
 
-    // public long getId() {
-    //     return id;
-    // }
-
-    // public String getName() {
-    //     return name;
-    // }
-
-    // public List<Message> getMessages() {
-    //     return messages;
-    // }
-
-    // public void setId(long id) {
-    //     this.id = id;
-    // }
-
-    // public void setName(String name) {
-    //     this.name = name;
-    // }
-
-    // public void setMessages(List<Message> messages) {
-    //     this.messages = messages;
-    // }
-
-    // @Override
-    // public String toString() {
-    //     return "Discussion [id=" + id + ", name=" + name + ", messages=" + messages + "]";
-    // }
-
-    
 }
