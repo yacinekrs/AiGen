@@ -1,8 +1,7 @@
 package com.example.aigen.aigen_demo.model;
 
 import java.util.List;
-
-import jakarta.annotation.Generated;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,9 +14,10 @@ public class Discussion {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private long id;
+    
     private String name;
     
-    @OneToMany(mappedBy = "discussion")
+    @OneToMany(mappedBy = "discussion", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Message> messages;
 
     public long getId() {
@@ -27,7 +27,7 @@ public class Discussion {
     public String getName() {
         return name;
     }
-    @OneToMany(mappedBy = "discussion")
+
     public List<Message> getMessages() {
         return messages;
     }
@@ -42,6 +42,11 @@ public class Discussion {
 
     public void setMessages(List<Message> messages) {
         this.messages = messages;
+    }
+
+    @Override
+    public String toString() {
+        return "Discussion [id=" + id + ", name=" + name + ", messages=" + messages + "]";
     }
 
     
