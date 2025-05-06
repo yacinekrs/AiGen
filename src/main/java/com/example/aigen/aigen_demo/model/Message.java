@@ -27,7 +27,7 @@ public class Message {
     private Instant createdAt = Instant.now();
 
     @ManyToOne
-    @JoinColumn(name = "discussion_id")
+    @JoinColumn(name = "discussion_id", nullable = false)
     private Discussion discussion;
 
     public Long getId() {
@@ -70,11 +70,16 @@ public class Message {
         this.discussion = discussion;
     }
 
+
     @Override
     public String toString() {
-        return "Message [id=" + id + ", prompt=" + prompt + ", response=" + response + ", createdAt=" + createdAt
-                + ", discussion=" + discussion + "]";
-    }
+    return "Message [id=" + id + 
+           ", prompt=" + prompt + 
+           ", response=" + response + 
+           ", createdAt=" + createdAt + 
+           ", discussionId=" + (discussion != null ? discussion.getId() : null) + "]";
+}
+
 
     
 }
