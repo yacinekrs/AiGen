@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 /data/*.mv.db
-
+testdb.trace.db
 
 ### VS Code ###
 .vscode/

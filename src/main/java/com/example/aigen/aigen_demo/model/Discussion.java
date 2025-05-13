@@ -21,35 +21,4 @@ public class Discussion {
     
     @OneToMany(mappedBy = "discussion", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Message> messages;
-
-    // public long getId() {
-    //     return id;
-    // }
-
-    // public String getName() {
-    //     return name;
-    // }
-
-    // public List<Message> getMessages() {
-    //     return messages;
-    // }
-
-    // public void setId(long id) {
-    //     this.id = id;
-    // }
-
-    // public void setName(String name) {
-    //     this.name = name;
-    // }
-
-    // public void setMessages(List<Message> messages) {
-    //     this.messages = messages;
-    // }
-
-    // @Override
-    // public String toString() {
-    //     return "Discussion [id=" + id + ", name=" + name + ", messages=" + messages + "]";
-    // }
-
-    
 }

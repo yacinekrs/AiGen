@@ -32,46 +32,6 @@ public class Message {
     @JoinColumn(name = "discussion_id", nullable = false)
     private Discussion discussion;
 
-    // public Long getId() {
-    //     return id;
-    // }
-
-    // public String getPrompt() {
-    //     return prompt;
-    // }
-
-    // public String getResponse() {
-    //     return response;
-    // }
-
-    // public Instant getCreatedAt() {
-    //     return createdAt;
-    // }
-
-    // public Discussion getDiscussion() {
-    //     return discussion;
-    // }
-
-    // public void setId(Long id) {
-    //     this.id = id;
-    // }
-
-    // public void setPrompt(String prompt) {
-    //     this.prompt = prompt;
-    // }
-
-    // public void setResponse(String response) {
-    //     this.response = response;
-    // }
-
-    // public void setCreatedAt(Instant createdAt) {
-    //     this.createdAt = createdAt;
-    // }
-
-    // public void setDiscussion(Discussion discussion) {
-    //     this.discussion = discussion;
-    // }
-
     @Override
     public String toString() {
     return "Message [id=" + id + 
